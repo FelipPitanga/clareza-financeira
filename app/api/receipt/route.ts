@@ -1,10 +1,11 @@
 import { getClarezaUser } from "@/app/auth";
+import { env } from "cloudflare:workers";
 
 const BUCKET = "clareza-receipts";
 
 function supabaseConfig() {
-  const url = process.env.SUPABASE_URL;
-  const secret = process.env.SUPABASE_SECRET_KEY;
+  const url = env.SUPABASE_URL;
+  const secret = env.SUPABASE_SECRET_KEY;
   if (!url || !secret) throw new Error("Supabase Storage não configurado");
   return { url: url.replace(/\/$/, ""), secret };
 }
@@ -25,7 +26,6 @@ export async function POST(req: Request) {
 
     const { url, secret } = supabaseConfig();
     const id = crypto.randomUUID();
-    const path = `${user.userId}/${id}`;
 
     const upload = await fetch(
       `${url}/storage/v1/object/${BUCKET}/${encodeURIComponent(user.userId)}/${encodeURIComponent(id)}`,
