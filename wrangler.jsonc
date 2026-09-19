@@ -4,6 +4,5 @@
   "main": "vinext/server/fetch-handler",
   "compatibility_date": "2026-09-18",
   "compatibility_flags": ["nodejs_compat"],
-  "d1_databases": [{"binding":"DB","database_name":"clareza-db","database_id":"ba2039a8-b19a-4429-a1ce-d56c15031023"}],
-  "r2_buckets": [{"binding":"BUCKET","bucket_name":"clareza-receipts"}]
+  "d1_databases": [{"binding":"DB","database_name":"clareza-db","database_id":"ba2039a8-b19a-4429-a1ce-d56c15031023"}]
 }
