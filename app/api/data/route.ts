@@ -14,7 +14,6 @@ async function supabase(path: string, init?: RequestInit) {
   return fetch(`${url}/rest/v1/${path}`, {
     ...init,
     headers: {
-      Authorization: `Bearer ${secret}`,
       apikey: secret,
       "Content-Type": "application/json",
       ...(init?.headers || {}),
