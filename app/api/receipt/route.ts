@@ -32,7 +32,6 @@ export async function POST(req: Request) {
       {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${secret}`,
           apikey: secret,
           "Content-Type": file.type,
           "x-upsert": "false",
@@ -67,7 +66,6 @@ export async function GET(req: Request) {
       `${url}/storage/v1/object/authenticated/${BUCKET}/${encodeURIComponent(user.userId)}/${encodeURIComponent(id)}`,
       {
         headers: {
-          Authorization: `Bearer ${secret}`,
           apikey: secret,
         },
       }
